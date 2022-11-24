@@ -3,6 +3,9 @@ FROM maven:3.6.3-openjdk-8
 COPY ./project /app
 COPY ./entry-point.sh /app/entry-point.sh
 RUN chmod +x /app/entry-point.sh
+
+VOLUME ./project/target target
+
 WORKDIR /app
 
 RUN mvn verify

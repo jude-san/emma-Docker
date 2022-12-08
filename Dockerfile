@@ -9,6 +9,7 @@ VOLUME ./project/target target
 WORKDIR /app
 
 RUN mvn verify
+
 RUN apt update && apt install -y telnet
 
 ENTRYPOINT ["/app/entry-point.sh"]
